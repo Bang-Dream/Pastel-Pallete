@@ -3,14 +3,13 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import "./scss/Main.scss";
 import "./scss/Reset.scss";
-import Navbar from "./components/Ui/Navbar";
+import Navigation from "./components/Ui/Navbar";
 function App() {
   return (
-    <Fragment>
-      <Navbar></Navbar>
-      하이
+    <>
+      <Navigation></Navigation>
       <Outlet />
-    </Fragment>
+    </>
   );
 }
 
