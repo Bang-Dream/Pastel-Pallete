@@ -1,0 +1,46 @@
+* {
+  font-family: "SF_HambakSnow";
+}
+*::selection {
+  color: white;
+  background-color: rgba(255, 51, 153, 0.5);
+}
+#wrap {
+  line-height: 30px;
+  font-size: 22px;
+}
+#Logo {
+  color: #ff3399;
+}
+#star {
+  font-family: "JSongMyung-Regular-KO";
+}
+#h1 {
+  margin-top: 30px;
+}
+#title {
+  margin-bottom: 50px;
+}
+#last_word {
+  margin-bottom: 50px;
+}
+.center {
+  width: 80%;
+  margin: 50px auto;
+}
+
+@font-face {
+  font-family: "SF_HambakSnow";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JSongMyung-Regular-KO";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/JSongMyung-Regular-KO.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
