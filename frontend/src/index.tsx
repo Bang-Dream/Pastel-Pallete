@@ -8,19 +8,21 @@ import Member from "./components/Function/Member";
 import Deck from "./components/Function/Deck";
 import Illust from "./components/Function//Illust";
 import Write from "./components/Function/Write";
+import Board from "./components/Function/Board";
 import Error from "./components/Error/Error";
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="*" element={<Error />} />
         <Route path="" element={<Main />} />
         <Route path="member" element={<Member />} />
         <Route path="story" element={<Story />} />
         <Route path="deck" element={<Deck />} />
         <Route path="illust" element={<Illust />} />
         <Route path="write" element={<Write />} />
+        <Route path="board" element={<Board />} />
+        <Route path="*" element={<Error />} />
       </Route>
     </Routes>
   </BrowserRouter>,
