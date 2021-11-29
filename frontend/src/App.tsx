@@ -7,7 +7,7 @@ import Navigation from "./components/Ui/Navbar";
 function App() {
   return (
     <>
-      <Navigation></Navigation>
+      <Navigation/>
       <Outlet />
     </>
   );

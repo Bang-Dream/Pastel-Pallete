@@ -2,8 +2,8 @@ import "../../scss/Reset.scss";
 import "../../scss/Main.scss";
 export default function story() {
   return (
-    <main id="wrap">
-      <div className="center">
+    <main id="wrap" style={{ width: "80%", margin: "70px auto" }}>
+      <div>
         <h1>1장</h1>
         <h2 id="title">- 시작</h2>
         보컬 마루야마 아야는 3년간의 연습생 생활 끝에 Pastel*Palettes로 데뷔하게

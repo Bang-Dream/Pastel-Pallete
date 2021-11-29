@@ -3,7 +3,7 @@ import "../../scss/Reset.scss";
 import "../../scss/Main.scss";
 export default function Member() {
   return (
-    <main style={{ marginTop: "50px" }}>
+    <main style={{ marginTop: "65px", marginLeft: "50px" }}>
       <div>아야 치사토 히나 마야 이브</div>
     </main>
   );

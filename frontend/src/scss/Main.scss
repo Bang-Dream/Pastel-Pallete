@@ -5,6 +5,9 @@
   color: white;
   background-color: rgba(255, 51, 153, 0.3);
 }
+body {
+  margin-top: 60px;
+}
 #wrap {
   line-height: 30px;
   font-size: 22px;
@@ -20,7 +23,7 @@
   margin-top: 30px;
 }
 #title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 #last_word {
   margin-bottom: 50px;
@@ -55,6 +58,7 @@
 #comment {
   margin-left: 20px;
 }
+
 // #topBar {
 //   padding-top: 30px;
 //   vertical-align: center;
@@ -88,6 +92,31 @@ a:hover {
 }
 .mint {
   background-color: #83ebe7 !important;
+}
+#default {
+  width: 80%;
+  margin: 0 auto;
+}
+#title {
+  margin-top: 65px;
+}
+#contents {
+  height: 360px;
+  resize: none;
+}
+#button {
+  display: block;
+  width: 20%;
+  height: 50px;
+  font-size: 30px;
+  margin: 40px auto;
+}
+#reset-button {
+  display: block;
+  width: 20%;
+  height: 50px;
+  font-size: 30px;
+  margin: 20px;
 }
 @font-face {
   font-family: "SF_HambakSnow";
