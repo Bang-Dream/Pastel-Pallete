@@ -4,7 +4,11 @@ import "../../scss/Main.scss";
 import { Navbar, Container, Nav } from "react-bootstrap"; //NavDropdown
 export default function Navigation() {
   return (
-    <Navbar className="fixed-top mint" bg="light" expand="lg">
+    <Navbar
+      className="fixed-top mint mb-5"
+      bg="light"
+      expand="lg"
+    >
       <Container>
         <Navbar.Brand href="/" id="Logo">
           Pastel <span id="star">*</span> Palletes

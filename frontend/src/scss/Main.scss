@@ -1,5 +1,5 @@
 * {
-  font-family: "SF_HambakSnow";
+  font-family: "SBAggroM";
 }
 *::selection {
   color: white;
@@ -10,6 +10,7 @@
   font-size: 22px;
 }
 #Logo {
+  font-family: "SF_HambakSnow";
   color: rgba(255, 51, 153, 0.8);
 }
 #star {
@@ -26,24 +27,44 @@
 }
 .center {
   width: 80%;
-  margin: 50px auto;
+  text-align: center;
+}
+.margin-top {
+  margin-top: 30px;
+}
+.margin-bottom {
+  margin-bottom: 60px;
 }
 .carousel-control-next-icon {
-  width:25px;
-  height:40px;
+  width: 25px;
+  height: 40px;
   margin-left: 10px;
   background-color: #ff3399 !important;
   border-radius: 30%;
 }
 .carousel-control-prev-icon {
-  width:25px;
-  height:40px;
+  width: 25px;
+  height: 40px;
   margin-right: 10px;
   background-color: #ff3399 !important;
   border-radius: 30%;
 }
+#post {
+  margin-top: 30px;
+}
+#comment {
+  margin-left: 20px;
+}
+// #topBar {
+//   padding-top: 30px;
+//   vertical-align: center;
+//   color: #fff;
+//   display: flex;
+//   background-color: #000;
+//   width: 100%;
+// }
 // .carousel-control-next {
-  
+
 //   background-color: #ff3399 !important;
 //   border-radius: 30%;
 // }
@@ -51,7 +72,14 @@
 //   background-color: #ff3399 !important;
 //   border-radius: 30%;
 // }
-
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #ccc;
+  text-decoration: none;
+}
 .carousel-indicators li {
   border-radius: 10px;
 }
@@ -73,6 +101,13 @@
   font-family: "JSongMyung-Regular-KO";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/JSongMyung-Regular-KO.woff2")
     format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SBAggroM";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
