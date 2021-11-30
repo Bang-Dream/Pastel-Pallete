@@ -11,7 +11,7 @@ const port = process.env.port || 3001;
 var db;
 MongoClient.connect(
   "mongodb+srv://admin:qwer1234@cluster0.rjy7d.mongodb.net/react?retryWrites=true&w=majority",
-  function (err, client) {
+  (err, client) => {
     if (err) return console.log(err);
     db = client.db("bangdream");
     app.listen(port, () => {
@@ -27,7 +27,6 @@ app.get("/api/list", (req, res) => {
     .find()
     .toArray((err, result) => {
       if (err) return err;
-      // console.log(result);
       res.send(result);
     });
 });
@@ -35,20 +34,41 @@ app.get("/api/list", (req, res) => {
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/build/index.html"));
 });
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/build/index.html"));
 });
 
 app.post("/add", (req, res) => {
-  var info = {
-    title: req.body.title,
-    contents: req.body.contents,
-  };
-  db.collection("post").insertOne(info, (err, res) => {
-    if (err) return err;
-    console.log("전송완료");
-    console.log(info.title);
-    console.log(info.contents);
-  });
+  db.collection("count")
+    .find()
+    .toArray((err, result) => {
+      if (err) return err;
+
+      db.collection("count").findOne({ name: "게시물갯수" }, (err, res) => {
+        var info = {
+          _id: res.count,
+          title: req.body.title,
+          contents: req.body.contents,
+        };
+
+        if (err) return err;
+        console.log(res.count);
+
+        db.collection("post").insertOne(info, (err, res) => {
+          if (err) return err;
+          console.log(info);
+        });
+      });
+    });
+
+  db.collection("count").updateOne(
+    { name: "게시물갯수" },
+    { $inc: { count: 1 } },
+    (err, res) => {
+      if (err) return err;
+    }
+  );
+
   return res.redirect("/ok");
 });
