@@ -15,7 +15,12 @@ export default function Board() {
         console.log(res.data);
         console.log(res.data[0].title);
         console.log(res.data[0]);
-        setPost(res.data[0]);
+        var copy = [...post];
+        copy.unshift(res.data[0].title);
+        setPost(copy);
+        // setPost(res.data[0].title);
+        // setPost(res.data[1].title); // .title
+        console.log("ok");
       })
       .catch((err) => {
         console.log(err);
@@ -35,6 +40,7 @@ export default function Board() {
             {a}
             <span id="comment">(0)</span>
           </h4>
+          <hr />
         </Link>
       ))}
       {/* 여기를 바꿔야함 */}
@@ -46,6 +52,6 @@ export default function Board() {
   );
 }
 
-// 지금 내가 해야하는 것 : 일단은 json 파일 뿌리는 형태부터가 잘못됨.
-// _id : 0 1 2 3 4 5 이런식으로 저장하고
-// 그 다음에 이제 state에 넣고 그 다음에 이제 map함수를 돌려서 뽑자.
+// 지금 내가 해야하는 것 : 게시판 데이터 뿌리기 완성했는데
+// 기본 데이터(게시글이 없습니다.) 없애주고
+// map문 돌려서 모든 데이터를 state에 넣어준다
