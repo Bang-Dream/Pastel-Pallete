@@ -29,7 +29,7 @@ export default function Board() {
       {/* 여기를 바꿔야함  */}
       {post.map((data, index) => (
         <Link to="#" id="post" key={index}>
-          <h4 style={{ marginTop: "70px" }}>
+          <h4 style={{ marginTop: "30px" }}>
             {/* {만약 개추 > 10 이라면 념글 아이콘 보여주기} */}
             {data}
             <span id="comment">(0)</span>
@@ -40,7 +40,7 @@ export default function Board() {
       {/* 여기를 바꿔야함 */}
 
       <Link to="/write">
-        <button className="mt-5 btn btn-primary">글쓰기</button>
+        <button className="mt-5 mb-5 btn btn-primary">글쓰기</button>
       </Link>
     </div>
   );
