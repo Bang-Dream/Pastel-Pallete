@@ -33,10 +33,9 @@ app.get("/api/list", (req, res) => {
 
 app.delete("/delete", (req, res) => {
   req.body._id = parseInt(req.body._id);
-  console.log(req.body);
-  db.collection("bangdream").deleteOne(req.body, (err, result) => {
-    console.log("삭제완료");
-    console.log(result);
+  var postId = req.body;
+  db.collection("post").deleteOne(postId, (err, result) => {
+    console.log(`${postId._id} 번 게시물 삭제 완료~`);
   });
 });
 
