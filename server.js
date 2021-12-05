@@ -80,5 +80,5 @@ app.post("/add", (req, res) => {
     }
   );
 
-  return res.redirect("/ok");
+  return res.redirect("/board");
 });

@@ -33,11 +33,11 @@ export default function Board() {
       method: "DELETE",
       url: "/delete",
       data: { _id: e.target.dataset.id },
-    }).done((res) => {
-      alert("dmddo");
     });
   };
-
+  const refreshOne = () => {
+    window.location.reload();
+  };
   return (
     <ul className="center">
       {post.map((data, index) => (
@@ -53,6 +53,9 @@ export default function Board() {
                 data-id={id[index]}
               >
                 X
+              </button>
+              <button className="btn btn-success ml-3" onClick={refreshOne}>
+                새고로침
               </button>
             </h4>
             <hr />
