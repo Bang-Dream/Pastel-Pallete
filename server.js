@@ -31,6 +31,15 @@ app.get("/api/list", (req, res) => {
     });
 });
 
+app.delete("/delete", (req, res) => {
+  req.body._id = parseInt(req.body._id);
+  console.log(req.body);
+  db.collection("bangdream").deleteOne(req.body, (err, result) => {
+    console.log("삭제완료");
+    console.log(result);
+  });
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/build/index.html"));
 });

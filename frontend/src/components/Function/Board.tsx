@@ -4,6 +4,7 @@ import "../../scss/Reset.scss";
 import "../../scss/Main.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import $ from "jquery";
 export default function Board() {
   let [post, setPost] = useState([""]);
   // const [loading, setLoading] = useState(false);
@@ -24,20 +25,39 @@ export default function Board() {
     });
   }, []);
 
+  $(".delete").click((e) => {
+    let number: any = e.target.dataset.id; //이거 언디파인드 나옴?
+    parseInt(number);
+    console.log(number);
+    $.ajax({
+      method: "DELETE",
+      url: "/delete",
+      data: { _id: number },
+    }).done(() => {
+      alert("OK");
+      console.log("OK");
+    });
+  });
+
   return (
     <div className="center">
-      {/* 여기를 바꿔야함  */}
       {post.map((data, index) => (
-        <Link to="#" id="post" key={index}>
-          <h4 style={{ marginTop: "30px" }}>
-            {/* {만약 개추 > 10 이라면 념글 아이콘 보여주기} */}
-            {data}
-            <span id="comment">(0)</span>
-          </h4>
-          <hr />
-        </Link>
+        <ul key={index}>
+          <Link to="#" id="post">
+            <li>
+              <h4 style={{ marginTop: "30px" }}>
+                {/* {만약 개추 > 10 이라면 념글 아이콘 보여주기} */}
+                {data}
+                <span id="comment">(0) &nbsp;&nbsp;</span>
+                <button className="btn btn-danger delete" data-id={index}>
+                  X
+                </button>
+              </h4>
+              <hr />
+            </li>
+          </Link>
+        </ul>
       ))}
-      {/* 여기를 바꿔야함 */}
 
       <Link to="/write">
         <button className="mt-5 mb-5 btn btn-primary">글쓰기</button>
@@ -45,7 +65,3 @@ export default function Board() {
     </div>
   );
 }
-
-// 지금 내가 해야하는 것 : 게시판 데이터 뿌리기 완성했는데
-// 기본 데이터(게시글이 없습니다.) 없애주고
-// map문 돌려서 모든 데이터를 state에 넣어준다
