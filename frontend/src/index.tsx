@@ -9,6 +9,8 @@ import Deck from "./components/Function/Deck";
 import Illust from "./components/Function//Illust";
 import Write from "./components/Function/Write";
 import Board from "./components/Function/Board";
+import Login from "./components/Login/Login";
+import Signup from "./components/Login/Signup";
 import Ok from "./components/Function/Ok";
 import Error from "./components/Error/Error";
 const rootElement = document.getElementById("root");
@@ -23,6 +25,8 @@ render(
         <Route path="illust" element={<Illust />} />
         <Route path="write" element={<Write />} />
         <Route path="board" element={<Board />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
         <Route path="ok" element={<Ok />} />
         <Route path="*" element={<Error />} />
       </Route>

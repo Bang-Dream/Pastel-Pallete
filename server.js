@@ -34,6 +34,8 @@ app.get("/api/list", (req, res) => {
 app.delete("/delete", (req, res) => {
   req.body._id = parseInt(req.body._id);
   var postId = req.body;
+  // postid = {_id : req.body._id}
+  // postid = {_id : 1}
   db.collection("post").deleteOne(postId, (err, result) => {
     console.log(`${postId._id} 번 게시물 삭제 완료~`);
   });
