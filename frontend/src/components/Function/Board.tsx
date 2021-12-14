@@ -16,7 +16,7 @@ export default function Board() {
       var idCopy: number[] = id;
 
       data.map((data: string, index: number) => {
-        var titleData = res.data[index].title;
+        var titleData: string = res.data[index].title;
         if (post !== null) {
           titleCopy.unshift(titleData); // 'any' 형식의 인수는 'never' 형식의 매개 변수에 할당될 수 없습니다.
         }
@@ -41,7 +41,6 @@ export default function Board() {
   };
 
   const deleteOne = (e: any) => {
-    
     // $.ajax({
     //   method: "DELETE",
     //   url: "/delete",
@@ -51,7 +50,8 @@ export default function Board() {
     // 위 코드를 axios로 어떻게 바꾸나요 아무리 예제를 찾아봐도 delete는 거의 안나와요 선생님
     console.log(e.target.dataset.id);
     axios
-      .delete("http://localhost:3001/api/list", { // 여기에 모든 데이터 다 json으로 잇서염
+      .delete("http://localhost:3001/api/list", {
+        // 여기에 모든 데이터 다 json으로 잇서염
         data: {
           _id: e.target.dataset.id,
         },
