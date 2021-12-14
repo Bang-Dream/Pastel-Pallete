@@ -18,9 +18,11 @@ export default function Board() {
       data.map((data: string, index: number): string | number =>
         titleCopy.unshift(res.data[index].title)
       );
+
       data.map((data: string, index: number): string[] | number[] | number =>
         idCopy.unshift(res.data[index]._id)
       );
+
       console.log(idCopy);
       setPost(titleCopy);
       setId(idCopy);

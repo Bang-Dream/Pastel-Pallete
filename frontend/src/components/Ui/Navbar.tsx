@@ -12,19 +12,19 @@ export default function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link id="NavC" href="deck">
+            <Nav.Link className="NavC" href="deck">
               완덱
             </Nav.Link>
-            <Nav.Link id="NavC" href="member">
+            <Nav.Link className="NavC" href="member">
               멤버 소개
             </Nav.Link>
-            <Nav.Link id="NavC" href="story">
+            <Nav.Link className="NavC" href="story">
               스토리
             </Nav.Link>
-            <Nav.Link id="NavC" href="illust">
+            <Nav.Link className="NavC" href="illust">
               사진 모음
             </Nav.Link>
-            <Nav.Link id="NavC" href="board">
+            <Nav.Link className="NavC" href="board">
               게시판
             </Nav.Link>
             {/*  */}
