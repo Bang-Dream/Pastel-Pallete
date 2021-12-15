@@ -11,8 +11,9 @@ export default function Board() {
   // const [loading, setLoading] = useState(false);
   useEffect(() => {
     axios.get("http://localhost:3001/api/list").then((res) => {
+      // 위 링크에 게시글 데이터 잇슴니다.
       var data = res.data;
-      var titleCopy: string[] = [...post];
+      var titleCopy: string[] = post;
       var idCopy: number[] = id;
       if (post !== null) {
         data.map((data: string, index: number) => {
@@ -20,15 +21,15 @@ export default function Board() {
           titleCopy.unshift(titleData);
         });
       }
-
+      // console.log(titleCopy);
       data.map((data: string, index: number) => {
         var idData = res.data[index]._id;
         if (id !== null) {
           idCopy.unshift(idData);
         }
       });
+      // console.log(idCopy);
 
-      console.log(idCopy);
       setPost(titleCopy); // 'string[]' 형식의 인수는 'SetStateAction<never[]>' 형식의 매개 변수에 할당될 수 없습니다.
       setId(idCopy); // 'number[]' 형식의 인수는 'SetStateAction<never[]>' 형식의 매개 변수에 할당될 수 없습니다.
       console.log("state setting ok");
@@ -47,6 +48,7 @@ export default function Board() {
     // });
 
     // 위 코드를 axios로 어떻게 바꾸나요 아무리 예제를 찾아봐도 delete는 거의 안나와요 선생님
+
     console.log(e.target.dataset.id);
     axios
       .delete("http://localhost:3001/api/list", {
