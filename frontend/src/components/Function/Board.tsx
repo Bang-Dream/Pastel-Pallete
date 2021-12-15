@@ -3,80 +3,62 @@ import { useState, useEffect } from "react";
 import "../../scss/Reset.scss";
 import "../../scss/Main.scss";
 import { Link } from "react-router-dom";
-import axios from "axios";
-// import $ from "jquery";
+import axios, { AxiosResponse } from "axios";
+import Post from "./Post";
+import $ from "jquery";
 export default function Board() {
-  let [post, setPost] = useState([]);
-  let [id, setId] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  let [post, setPost] = useState<string[]>([]);
+  let [id, setId] = useState<string[]>([]);
   useEffect(() => {
+    //데이터 가져와서 state로 넣기
     axios.get("http://localhost:3001/api/list").then((res) => {
-      // 위 링크에 게시글 데이터 잇슴니다.
-      var data = res.data;
-      var titleCopy: string[] = post;
-      var idCopy: number[] = id;
-      if (post !== null) {
-        data.map((data: string, index: number) => {
-          var titleData: string = res.data[index].title;
-          titleCopy.unshift(titleData);
-        });
-      }
-      // console.log(titleCopy);
-      data.map((data: string, index: number) => {
-        var idData = res.data[index]._id;
-        if (id !== null) {
-          idCopy.unshift(idData);
-        }
-      });
-      // console.log(idCopy);
-
-      setPost(titleCopy); // 'string[]' 형식의 인수는 'SetStateAction<never[]>' 형식의 매개 변수에 할당될 수 없습니다.
-      setId(idCopy); // 'number[]' 형식의 인수는 'SetStateAction<never[]>' 형식의 매개 변수에 할당될 수 없습니다.
-      console.log("state setting ok");
+      console.log(res.data);
+      console.log(typeof res.data);
+      const data = Object.keys(res.data);
+      setPost(data);
+      console.log(post);
     });
   }, []);
-
   const refreshOne = () => {
     window.location.reload();
   };
 
   const deleteOne = (e: any) => {
-    // $.ajax({
-    //   method: "DELETE",
-    //   url: "/delete",
-    //   data: { _id: e.target.dataset.id },
-    // });
-
-    // 위 코드를 axios로 어떻게 바꾸나요 아무리 예제를 찾아봐도 delete는 거의 안나와요 선생님
-
+    $.ajax({
+      method: "DELETE",
+      url: "/delete",
+      data: { _id: e.target.dataset.id },
+    });
     console.log(e.target.dataset.id);
-    axios
-      .delete("http://localhost:3001/api/list", {
-        // 여기에 모든 데이터 다 json으로 잇서염
-        data: {
-          _id: e.target.dataset.id,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        console.log("ok");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    // axios
-    //   .delete("/delete")
-    //   .then((res) => {
-    //     // refreshOne(); // 새로고침 함수
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //   });
   };
+  // 위 코드를 axios로 어떻게 바꾸나요 아무리 예제를 찾아봐도 delete는 거의 안나와요 선생님
+
+  // axios
+  //   .delete("http://localhost:3001/api/list", {
+  //     // 여기에 모든 데이터 다 json으로 잇서염
+  //     data: {
+  //       _id: e.target.dataset.id,
+  //     },
+  //   })
+  //   .then((res) => {
+  //     console.log(res);
+  //     console.log("ok");
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+  // axios
+  //   .delete("/delete")
+  //   .then((res) => {
+  //     // refreshOne(); // 새로고침 함수
+  //     console.log(res);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   })
+  //   .then((res) => {
+  //     console.log(res);
+  //   });
 
   return (
     <ul className="center">
