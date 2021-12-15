@@ -16,11 +16,10 @@ export default function Board() {
       console.log(typeof res.data);
 
       res.data.map((data: string, index: number) => {
-        var input: any = Object.values(res.data[index]);
-        console.log(input);
-        
-        var copy: string[] = [...post];
-        copy.unshift(input);
+        var titleinput: any = Object.values(res.data[index].title);
+        console.log(titleinput);
+        var copy = [...post];
+        copy.unshift(titleinput);
         setPost(copy);
       });
     });
