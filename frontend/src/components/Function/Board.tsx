@@ -9,16 +9,24 @@ import $ from "jquery";
 export default function Board() {
   let [post, setPost] = useState<string[]>([]);
   let [id, setId] = useState<string[]>([]);
+
   useEffect(() => {
-    //데이터 가져와서 state로 넣기
     axios.get("http://localhost:3001/api/list").then((res) => {
       console.log(res.data);
       console.log(typeof res.data);
-      const data = Object.keys(res.data);
-      setPost(data);
-      console.log(post);
+
+      res.data.map((data: string, index: number) => {
+        var input: any = Object.values(res.data[index]);
+        console.log(input);
+        
+        var copy: string[] = [...post];
+        copy.unshift(input);
+        setPost(copy);
+      });
     });
+    console.log(post);
   }, []);
+
   const refreshOne = () => {
     window.location.reload();
   };
@@ -31,34 +39,6 @@ export default function Board() {
     });
     console.log(e.target.dataset.id);
   };
-  // 위 코드를 axios로 어떻게 바꾸나요 아무리 예제를 찾아봐도 delete는 거의 안나와요 선생님
-
-  // axios
-  //   .delete("http://localhost:3001/api/list", {
-  //     // 여기에 모든 데이터 다 json으로 잇서염
-  //     data: {
-  //       _id: e.target.dataset.id,
-  //     },
-  //   })
-  //   .then((res) => {
-  //     console.log(res);
-  //     console.log("ok");
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // axios
-  //   .delete("/delete")
-  //   .then((res) => {
-  //     // refreshOne(); // 새로고침 함수
-  //     console.log(res);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   })
-  //   .then((res) => {
-  //     console.log(res);
-  //   });
 
   return (
     <ul className="center">
