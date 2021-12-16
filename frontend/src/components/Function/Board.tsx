@@ -47,35 +47,31 @@ export default function Board() {
       url: "/delete",
       data: { _id: e.target.dataset.id },
     });
+    refreshOne();
     console.log(e.target.dataset.id);
   };
 
   return (
     <ul className="center">
       {post.map((data, index) => (
-        <form key={index} action="/delete" method="delete">
-          <Link to="#" id="post">
-            <h4 style={{ marginTop: "30px" }}>
-              {id[index]}번 게시물 :{" "}
-              {/* {만약 개추 > 10 이라면 념글 아이콘 보여주기} */}
-              {data}
-              <span id="comment">( 댓글 )&nbsp;&nbsp;</span>
-              <button
-                className="btn btn-danger delete"
-                onClick={deleteOne}
-                data-id={id[index]}
-              >
-                X
-              </button>
-              <button className="btn btn-success ml-3" onClick={refreshOne}>
-                새고로침
-              </button>
-            </h4>
-            <hr />
-          </Link>
-        </form>
+        <Link to="#" id="post">
+          <h4 style={{ marginTop: "30px" }}>
+            {id[index]}번 게시물 :{" "}
+            {/* {만약 개추 > 10 이라면 념글 아이콘 보여주기} */}
+            {data}
+            <span id="comment">( 댓글 )&nbsp;&nbsp;</span>
+            <button
+              className="btn btn-danger delete"
+              onClick={deleteOne}
+              data-id={id[index]}
+            >
+              X
+            </button>
+          </h4>
+          <hr />
+        </Link>
       ))}
-
+      <br />
       <Link to="/write">
         <button className="mt-5 mb-5 btn btn-primary">글쓰기</button>
       </Link>
