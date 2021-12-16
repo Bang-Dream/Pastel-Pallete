@@ -1,2 +1,4 @@
-React - Typescript, Node.js를 활용해서
-뱅드림 - Pastel \* Pallete 소개 페이지를 만드는 중입니다.
+1차 배포 (현재 post, delete등 기능 local에서만 작동)
+https://pastel-palletes.netlify.app/
+
+시험 끝난 뒤 게시판 기능 구현 예정
