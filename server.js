@@ -36,8 +36,9 @@ app.get("/api/list", (req, res) => {
 app.delete("/delete", (req, res) => {
   console.log(req.body._id);
   req.body._id = parseInt(req.body._id);
-  console.log(req.body._id);
+  // console.log(req.body._id);
   var postId = req.body;
+  console.log(postId);
   // postid = {_id : req.body._id}
   // postid = {_id : 1}
   db.collection("post").deleteOne(postId, (err, result) => {
