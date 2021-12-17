@@ -15,6 +15,7 @@ export default function Main() {
         </ul>
         <h1>앞으로 할 것들 목록</h1>
         <ul className="my-3">
+          <li>점보트론 이미지 변경하기</li>
           <li>사진 크롤링해서 뿌리기</li>
           <li>완덱, 멤버소개 노가다해서 박아넣기</li>
           <li>글수정, 글상세</li>
