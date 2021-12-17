@@ -14,7 +14,7 @@ body {
 }
 #Logo {
   font-family: "SF_HambakSnow";
-  color: rgba(255, 51, 153, 0.8);
+  color: rgba(252, 136, 194, 0.8);
 }
 #star {
   font-family: "JSongMyung-Regular-KO";
@@ -32,26 +32,16 @@ body {
   text-align: center;
   padding-top: 60px;
 }
+.center li {
+  margin: 15px 0;
+}
 .margin-top {
   margin-top: 30px;
 }
 .margin-bottom {
   margin-bottom: 60px;
 }
-.carousel-control-next-icon {
-  width: 25px;
-  height: 40px;
-  margin-left: 10px;
-  background-color: #ff3399 !important;
-  border-radius: 30%;
-}
-.carousel-control-prev-icon {
-  width: 25px;
-  height: 40px;
-  margin-right: 10px;
-  background-color: #ff3399 !important;
-  border-radius: 30%;
-}
+
 #post {
   width: 700px;
   display: inline-block;
@@ -94,11 +84,15 @@ a:hover {
   border-radius: 10px;
 }
 .pink {
-  background-color: #ff3399 !important;
+  background-color: #ffe3f1 !important;
 }
 .mint {
-  background-color: #83ebe7 !important;
+  background-color: #D6E5FF !important;
 }
+// FFEEC9 치사토
+// #FFC9E4 아야
+// C9FFC9 마야
+// D6E5FF 카논
 #default {
   width: 80%;
   margin: 0 auto;

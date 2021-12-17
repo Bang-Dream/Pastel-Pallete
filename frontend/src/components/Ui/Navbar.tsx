@@ -1,6 +1,7 @@
 import React from "react";
 import "../../scss/Reset.scss";
 import "../../scss/Main.scss";
+import "../../scss/Ui.scss";
 import { Navbar, Container, Nav } from "react-bootstrap"; //NavDropdown
 export default function Navigation() {
   return (

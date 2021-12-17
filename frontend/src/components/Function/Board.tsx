@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "../../scss/Reset.scss";
 import "../../scss/Main.scss";
 import { Link } from "react-router-dom";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import $ from "jquery";
 export default function Board() {
   let [post, setPost] = useState<string[]>([]);

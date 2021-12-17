@@ -1,0 +1,29 @@
+// navbar
+
+.NavC:hover {
+  font-size: 16px !important;
+  color: #f162aa !important;
+  transition-duration: 0.2s;
+}
+
+// jumbotron
+
+.jumbotron {
+  background: url("https://i.ibb.co/HDrhwxF/image.jpg") no-repeat 100% 0px;
+}
+
+// carousel
+.carousel-control-next-icon {
+  width: 25px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: #ff3399 !important;
+  border-radius: 30%;
+}
+.carousel-control-prev-icon {
+  width: 25px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #ff3399 !important;
+  border-radius: 30%;
+}
